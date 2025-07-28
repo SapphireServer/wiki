@@ -69,9 +69,9 @@ Debug commands are custom commands that exist in Sapphire to easily manipulate t
 
 ### !script \<command>
 
-| Name                   | Usage                             | Details                                                            |
-| ---------------------- | --------------------------------- | ------------------------------------------------------------------ |
-| `unload`               | `!script unload <name>`           | Unloads a currently loaded script via its set name                 |
-| `find` or `f`          | `!script find <name>`             | Searches loaded scripts names for the search term - case sensitive |
-| `load` or `l`          | `!script load <path>`             | Loads the specified script from the supplied path                  |
-| `queuereload` or `qrl` | `!script find queuereload <name>` | Queues a script to be reloaded on the next server tick             |
+| Name                   | Usage                        | Details                                                            |
+| ---------------------- | ---------------------------- | ------------------------------------------------------------------ |
+| `unload`               | `!script unload <name>`      | Unloads a currently loaded script via its set name                 |
+| `find` or `f`          | `!script find <name>`        | Searches loaded scripts names for the search term - case sensitive |
+| `load` or `l`          | `!script load <path>`        | Loads the specified script from the supplied path                  |
+| `queuereload` or `qrl` | `!script queuereload <name>` | Queues a script to be reloaded on the next server tick             |
