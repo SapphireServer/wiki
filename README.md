@@ -57,7 +57,7 @@ Understand that this may be a lengthy process, depending on familiarity with pro
 
 Sapphire must be compiled from source code, as we do not provide binaries.
 
-Further instructions are provided in this wiki, starting from the [Overview ](getting-started/overview.md)page.&#x20;
+Further instructions are provided in this wiki, starting from the [Overview ](getting-started/overview.md)page.
 
 ### How can I contribute?
 
@@ -73,7 +73,7 @@ For bug reports, please see [GitHub Issues](https://github.com/SapphireServer/Sa
 We are not allowed to distribute the FFXIV client or any related content. Please do not ask for links or binaries related to FFXIV or Square Enix copyrighted content.
 {% endhint %}
 
-Sapphire currently targets `3.x` as the main development target, and the client version is documented in the `README.md` in the repo root. This version may change time to time as the client version moves forward, and you should check that you're on the correct version before reporting issues.&#x20;
+Sapphire currently targets `3.x` as the main development target, and the client version is documented in the `README.md` in the repo root. This version may change time to time as the client version moves forward, and you should check that you're on the correct version before reporting issues.
 
 The free trial version of the client **will NOT work with Sapphire**, as it is not a 3.3 client. It is simply the retail client version, but with restricted access up to Heavensward.
 

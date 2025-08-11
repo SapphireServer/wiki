@@ -41,11 +41,11 @@ We advise against downloading the zip source code ("tarball") through the github
 Sapphire provides a standard launcher to launch the FFXIV client while configuring it to connect to Sapphire.
 
 {% hint style="warning" %}
-The launcher has only been tested to work on Windows.&#x20;
+The launcher has only been tested to work on Windows.
 {% endhint %}
 
 {% hint style="info" %}
-There are alternative launchers (not developed by the Sapphire team) that can be setup to work with Sapphire, if desired.&#x20;
+There are alternative launchers (not developed by the Sapphire team) that can be setup to work with Sapphire, if desired.
 
 We do not provide support for them.
 {% endhint %}
@@ -57,7 +57,7 @@ You may clone the Sapphire Launcher by running the following command. Make sure 
 
 ### Install Dependencies
 
-Sapphire requires CMake and a C++ compiler to build.&#x20;
+Sapphire requires CMake and a C++ compiler to build.
 
 Additionally, Sapphire makes use of several dependencies. The submodule initialization through git will provide most of them, however SQL development headers need to be provided separately.
 

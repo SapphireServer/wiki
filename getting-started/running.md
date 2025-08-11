@@ -21,6 +21,15 @@ The API server requires Port 80 to function. Ensure no other programs are using 
 {% endhint %}
 
 4. Start `world`;
+
+{% hint style="info" %}
+On Windows with Hyper-V (WSL 2) you might run into an issue where high ports are reserved. If you see an error about binding to the port, run the following command to check if this is the case:
+
+```bash
+netsh int ip show excludedportrange protocol=tcp
+```
+{% endhint %}
+
 5. Create a folder called "log" if it does not already exist. The servers **will** crash if your file permissions prevent creating this folder.
 
 In case of crashes upon initializing the servers, please check if your FFXIV client version matches the version required by your chosen Sapphire server branch.
@@ -30,16 +39,16 @@ In case of crashes upon initializing the servers, please check if your FFXIV cli
 Sapphire provides a standard launcher to launch the FFXIV client while configuring it to connect to Sapphire.
 
 {% hint style="info" %}
-The launcher has only been tested to work on Windows.&#x20;
+The launcher has only been tested to work on Windows.
 {% endhint %}
 
 {% hint style="info" %}
-There are alternative launchers (not developed by the Sapphire team) that can be setup to work with Sapphire, if desired.&#x20;
+There are alternative launchers (not developed by the Sapphire team) that can be setup to work with Sapphire, if desired.
 
 We do not provide support for them.
 {% endhint %}
 
-1.  Open the Sapphire Launcher;&#x20;
+1.  Open the Sapphire Launcher;
 
     <figure><img src="https://camo.githubusercontent.com/f9a4cb29b48b20fe4a7297367e1228047b94bca5803dd05ef4a52f362c63f2b4/68747470733a2f2f692e696d6775722e636f6d2f757374444c39572e706e67" alt=""><figcaption></figcaption></figure>
 2.  Click on the gear in the top right to configure the launcher;
