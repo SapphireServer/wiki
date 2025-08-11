@@ -53,19 +53,19 @@ You can do this by changing the `Debug` dropdown in Visual Studio or adding the 
 Not building nav\_export in release could take several hours to generate all the navmeshes instead of 5-10 minutes.
 {% endhint %}
 
-1. Go to the `Sapphire build\bin\tools` folder;
-2. Use the nav\_export application to generate obj files with the following commands.
+1. Go to the `Sapphire build\bin` folder;
+2. Use the `tools/nav_export` application to generate obj files with the following commands.
    * You will need to run this from a terminal or command line (cmd.exe, powershell, git bash, etc);
-3. Provide the program with the path to your `FFXIV Client\game\sqpack\` folder.
+3. Provide the program with the path to your `FFXIV Client/game/sqpack/` folder.
 4. Wait for meshes to be generated. You can transfer them to later builds as long as no new maps have been added to the game.
 
 {% code overflow="wrap" %}
 ```bash
-nav_export <path-to-ffxiv-client>\game\sqpack\
+tools/nav_export <path-to-ffxiv-client>/game/sqpack
 ```
 {% endcode %}
 
-After you finish generating navmeshes, you may proceed to [Running](running.md) the server.
+After you finish generating navmeshes, make sure the `navi` folder is next to the `world` executable (**not inside the `tools` folder**) and you may proceed to [Running](running.md) the server.
 
 {% content-ref url="running.md" %}
 [running.md](running.md)
