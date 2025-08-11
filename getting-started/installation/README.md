@@ -10,7 +10,7 @@ Follow the guide to your platform as desired. Make sure you follow all the instr
 
 * [Windows](./#windows)
 * [Linux](./#linux)
-* [Mac](./#mac)
+* [MacOS](./#macos)
 
 ## Windows
 
@@ -21,7 +21,7 @@ If you are using WSL:
 
 Sapphire will also operate correctly (save for unforeseen issues) within the WSL and is actively tested in this environment.&#x20;
 
-While setup will not be covered in this guide, please note that it does work and you may prefer to use this environment for development over the standard Windows development environment. You can refer to the [Linux Installation Guide](https://github.com/SapphireServer/Sapphire/wiki/Linux-Installation) as the steps are the same regardless of where your Linux installation is hosted.&#x20;
+While setup will not be covered in this guide, please note that it does work and you may prefer to use this environment for development over the standard Windows development environment. You can refer to the [Linux Installation Guide](./#linux) as the steps are the same regardless of where your Linux installation is hosted.
 
 **CLion** may be used as a substitute over Visual Studio, as it has a very stable integration for WSL which may be preferable.
 {% endhint %}
@@ -29,8 +29,8 @@ While setup will not be covered in this guide, please note that it does work and
 ### Prerequisites
 
 * [Visual Studio 2022](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community\&rel=17) (Older versions may not work);
-* [MariaDB 10.3 to 10.](https://downloads.mariadb.org/)[7](https://downloads.mariadb.org/) **(64-Bit)** **(Recommended)**;
-  * Alternatively, Oracle MySQL 5.7 will also work, however MariaDB is hugely preferred over it.
+* [MariaDB 10.x](https://downloads.mariadb.org/) **(64-Bit required)**;
+  * Alternatively, Oracle MySQL 5.7 (not newer) will also work, however MariaDB is hugely preferred over it.
 * [Git](https://git-scm.com/download/win) or a graphical Git client like [GitKraken](https://www.gitkraken.com);
 * Sapphire source code, as obtained via git clone (see [Overview](../overview.md#building-sapphire));
 * Sapphire Launcher source code (optional);
@@ -38,13 +38,13 @@ While setup will not be covered in this guide, please note that it does work and
 
 ### Setup Development Environment
 
-**Install MySQL 5.7 or MariaDB**
+**Install MariaDB or MySQL 5.7**
 
 {% hint style="warning" %}
 We really recommend to install MariaDB (64-Bit) and avoid the hassle that is Oracle MySQL's awful installer and hidden packages.
 {% endhint %}
 
-1. Download MariaDB 10.7 installer (x64 MSI);
+1. Download MariaDB 10.x installer (x64 MSI);
 2. Proceed through installation. Make sure you note down any settings you change;
    *   If you only need development headers and libraries, you can deselect everything else;
 
@@ -128,13 +128,13 @@ Make sure you're targeting the correct version.
 If you don't already have a development environment setup, run the following:
 
 ```bash
-$ apt install -y build-essential
+$ sudo apt install -y build-essential
 ```
 
 Install development headers and tools:
 
 ```bash
-$ apt install cmake git libmariadb-dev zlib1g-dev
+$ sudo apt install cmake git libmariadb-dev zlib1g-dev mariadb-client xorg-dev
 ```
 
 After installing all dependencies, you can proceed building.
@@ -166,7 +166,7 @@ $ yum groupinstall -y development
 Install development headers and tools:
 
 ```bash
-$ yum install -y cmake git libmariadb-devel zlib-devel
+$ yum install -y cmake git libmariadb-devel zlib-devel MariaDB-client
 ```
 
 After installing all dependencies, you can proceed building.
@@ -177,14 +177,14 @@ After installing all dependencies, you can proceed building.
 
 Locate and open the folder in which you cloned the Sapphire server through the terminal.
 
-{% hint style="info" %}
-You can replace the command `make -j`**`4`** with your machine's thread count for faster compilation.
-{% endhint %}
+```bash
+$ cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+$ cmake --build build -j
+```
 
-<pre class="language-bash"><code class="lang-bash">$ mkdir build &#x26;&#x26; cd build
-<strong>$ cmake ..
-</strong>$ make -j 4
-</code></pre>
+{% hint style="info" %}
+In a headless environment (server/WSL) you can disable the toolkit GUI with `cmake -B build -DSAPPHIRE_BUILDTOOLKIT=OFF`. The toolkit depends on GLFW and you need the development packages for Wayland/X11 installed on your system. To use Wayland instead of X11 specify `-DGLFW_USE_WAYLAND=ON`.
+{% endhint %}
 
 If you have successfully built all the projects required, you may proceed to configuring the server.
 
@@ -200,7 +200,7 @@ You will need to install build and runtime dependencies before compiling.
 
 {% code overflow="wrap" %}
 ```bash
-$ brew install cmake git mysql zlib
+$ brew install cmake git mariadb zlib
 ```
 {% endcode %}
 
@@ -208,27 +208,32 @@ $ brew install cmake git mysql zlib
 
 Locate and open the folder in which you cloned the Sapphire server through the terminal.
 
-{% hint style="info" %}
-You can replace the command `make -j`**`4`** with your machine's thread count for faster compilation.
-{% endhint %}
-
 ```bash
-$ mkdir build && cd build
-$ cmake .. -DCMAKE_CXX_COMPILER=/usr/bin/clang++
-$ make -j 4
+$ cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+$ cmake --build build -j
 ```
 
-### Starting the SQL server
+### Starting the MariaDB server
 
 It is recommended that you start up the MySQL server manually to configure the database.
 
 ```bash
-$ mysql.server start
-$ mysql_secure_installation
-$ mysql.server stop
-
-$ brew services start mysql
+# Start the service
+$ brew services start mariadb
+# Secure the database
+$ sudo mariadb-secure-installation
 ```
+
+{% hint style="warning" %}
+MySQL is **not supported** with Sapphire on MacOS (the development headers changed too much). If you installed MySQL in the past, you might need to remove it and run the following commands to delete all the data:
+
+```sh
+# Delete configuration
+$ rm -rf /opt/homebrew/etc/my.cnf*
+# Delete databases
+$ rm -rf /opt/homebrew/var/mysql
+```
+{% endhint %}
 
 If you have successfully built all the projects required, you may proceed to configuring the server.
 
