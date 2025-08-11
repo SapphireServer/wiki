@@ -19,7 +19,7 @@ Follow the guide to your platform as desired. Make sure you follow all the instr
 
 If you are using WSL:
 
-Sapphire will also operate correctly (save for unforeseen issues) within the WSL and is actively tested in this environment.&#x20;
+Sapphire will also operate correctly (save for unforeseen issues) within the WSL and is actively tested in this environment.
 
 While setup will not be covered in this guide, please note that it does work and you may prefer to use this environment for development over the standard Windows development environment. You can refer to the [Linux Installation Guide](./#linux) as the steps are the same regardless of where your Linux installation is hosted.
 
@@ -80,7 +80,7 @@ We really recommend to install MariaDB (64-Bit) and avoid the hassle that is Ora
 If you're using CMake externally, open the generated SLN file instead.
 {% endhint %}
 
-3. If a CMake cache was not generated, select a Build Configuration.&#x20;
+3. If a CMake cache was not generated, select a Build Configuration.
    * Your MySQL installation will need to match your Build Configuruation. (Make sure you install **64 bit** versions.)
 
 {% hint style="info" %}

@@ -4,7 +4,7 @@ description: Setting up the Sapphire server and database
 
 # Configuring
 
-### Editing the configuration files&#x20;
+### Editing the configuration files
 
 1. Open the `Sapphire build\bin\config` folder;
 2. Copy `global.ini.default` to `global.ini` and open your copy to personalize it;
@@ -46,9 +46,9 @@ If you have completed all the steps above, then you have the minimum required to
 ### Generating navmeshes
 
 {% hint style="warning" %}
-Make sure that you build nav\_export in release.&#x20;
+Make sure that you build nav\_export in release.
 
-You can do this by changing the `Debug` dropdown in Visual Studio or adding the following argument to your CMake command line: `-DCMAKE_BUILD_TYPE=RelWithDebInfo`.&#x20;
+You can do this by changing the `Debug` dropdown in Visual Studio or adding the following argument to your CMake command line: `-DCMAKE_BUILD_TYPE=RelWithDebInfo`.
 
 Not building nav\_export in release could take several hours to generate all the navmeshes instead of 5-10 minutes.
 {% endhint %}

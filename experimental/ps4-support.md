@@ -5,7 +5,7 @@ description: Experimental and temperal support for PS4 connections
 # PS4 Support
 
 {% hint style="danger" %}
-Sapphire works on a PS4 out of the box. However, connecting to it is unsafe and bad and shouldn't be used for more than testing.&#x20;
+Sapphire works on a PS4 out of the box. However, connecting to it is unsafe and bad and shouldn't be used for more than testing.
 {% endhint %}
 
 To use Sapphire with a PS4, you will need the following things:
