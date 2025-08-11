@@ -21,6 +21,15 @@ The API server requires Port 80 to function. Ensure no other programs are using 
 {% endhint %}
 
 4. Start `world`;
+
+{% hint style="info" %}
+On Windows with Hyper-V (WSL 2) you might run into an issue where high ports are reserved. If you see an error about binding to the port, run the following command to check if this is the case:
+
+```bash
+netsh int ip show excludedportrange protocol=tcp
+```
+{% endhint %}
+
 5. Create a folder called "log" if it does not already exist. The servers **will** crash if your file permissions prevent creating this folder.
 
 In case of crashes upon initializing the servers, please check if your FFXIV client version matches the version required by your chosen Sapphire server branch.
