@@ -160,6 +160,22 @@ After installing all dependencies, you can proceed building.
 If you don't already have a development environment setup, run the following:
 
 ```bash
+$ yum install -y @development-tools
+```
+
+Install development headers and tools:
+
+```bash
+$ yum install -y cmake git mariadb-devel zlib-devel
+```
+
+After installing all dependencies, you can proceed building.
+{% endtab %}
+
+{% tab title="openSUSE" %}
+If you don't already have a development environment setup, run the following:
+
+```bash
 $ yum groupinstall -y development
 ```
 
