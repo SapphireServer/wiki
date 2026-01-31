@@ -87,7 +87,8 @@ If you're using CMake externally, open the generated SLN file instead.
 You may change the desired build output folder by editing the CMakeSettings.json file in the project folder.
 {% endhint %}
 
-3. Build the solution. Depending on how your Visual Studio is configured, you can build by: `Build` menu > `Build All` Right-click the CMakeLists.txt file and select `Build`;
+3. Build the solution. Depending on how your Visual Studio is configured, you can build by: `Build` menu > `Build All` Right-click the CMakeLists.txt file and select `Build`. (NB: In some installations, this could be in `View` > `CMake Targets`. In the solution explorer, Right click on `Sapphire Project` > `Build all`);
+
 4. Files will be generated according to the buildRoot path specified in your CMakeSettings.json file. By default this is **%userprofile%\CMakeBuild**{hash}\build{build configuration}. The full path assuming a default installation of Windows 7 or later is `C:\Users\[your username here]\CMakeBuild`.
 
 #### Build the Launcher project
