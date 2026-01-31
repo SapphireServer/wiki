@@ -20,7 +20,7 @@ For Windows, ensure that you allow access to each of the servers when prompted b
 The API server requires Port 80 to function. Ensure no other programs are using this port such as Skype, Apache/httpd, etc.
 {% endhint %}
 
-4. Start `world`;
+4. Start `server`;
 
 {% hint style="info" %}
 On Windows with Hyper-V (WSL 2) you might run into an issue where high ports are reserved. If you see an error about binding to the port, run the following command to check if this is the case:
