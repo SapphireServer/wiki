@@ -65,7 +65,7 @@ tools/nav_export <path-to-ffxiv-client>/game/sqpack
 ```
 {% endcode %}
 
-After you finish generating navmeshes, make sure the `navi` folder is next to the `world` executable (**not inside the `tools` folder**) and you may proceed to [Running](running.md) the server.
+After you finish generating navmeshes, make sure the `navi` folder is next to the `server` executable (**not inside the `tools` folder**) and you may proceed to [Running](running.md) the server.
 
 {% content-ref url="running.md" %}
 [running.md](running.md)
