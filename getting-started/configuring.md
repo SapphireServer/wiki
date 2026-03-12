@@ -29,7 +29,7 @@ Failing this step will cause the server to crash, alerting you of a DataPath err
 
 ### Import the database
 
-The DBM tool can be used to import and update your database for Sapphire. This tool can be located in your `Sapphire build\bin\tools` folder.
+The DBM tool can be used to import and update your database for Sapphire. This tool can be located in your `Sapphire build\bin\` folder.
 
 Use the DBM application with your terminal or command line to set up your database with the following command. Replace the command arguments with your MySQL configuration.
 
